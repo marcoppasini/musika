@@ -1,7 +1,7 @@
 ![musika_logo](images/musika_logo.png)
 
 # Musika! Fast Infinite Waveform Music Generation
-Official implementation of the paper [*Musika! Fast Infinite Waveform Music Generation*](arxiv.org).  
+Official implementation of the paper [*Musika! Fast Infinite Waveform Music Generation*](arxiv.org), accepted at ISMIR 2022.  
 
 
 This work was conducted as part of [Marco Pasini](https://twitter.com/marco_ppasini)'s Master thesis at the [Institute of Computational Perception](https://www.jku.at/en/institute-of-computational-perception/) at JKU Linz, with Jan Schlüter as supervisor.  
