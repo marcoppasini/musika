@@ -7,7 +7,7 @@ Official implementation of the paper [*Musika! Fast Infinite Waveform Music Gene
 This work was conducted as part of [Marco Pasini](https://twitter.com/marco_ppasini)'s Master thesis at the [Institute of Computational Perception](https://www.jku.at/en/institute-of-computational-perception/) at JKU Linz, with Jan Schlüter as supervisor.  
 
 Find the __demo samples__ [here](https://marcoppasini.github.io/musika)  
-Find the __paper__ [here](https://arxiv.org/)
+Find the __paper__ [here](https://arxiv.org/abs/2208.08706)
 
 ## Online Demo
 An online demo is available on Huggingface Spaces. Try it out [here](https://huggingface.co/spaces/marcop/musika)! 
