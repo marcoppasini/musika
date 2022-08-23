@@ -10,7 +10,7 @@ Find the __demo samples__ [here](https://marcoppasini.github.io/musika)
 Find the __paper__ [here](https://arxiv.org/abs/2208.08706)
 
 ## Online Demo
-An online demo is available on Huggingface Spaces. Try it out [here](https://huggingface.co/spaces/marcop/musika)! 
+An online demo is available on [Hugging Face Spaces](https://huggingface.co/spaces). Try it out [here](https://huggingface.co/spaces/marcop/musika)! [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/marcop/musika)
 
 ## The code will be available soon!
 
