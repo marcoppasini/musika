@@ -1,0 +1,12 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+# platform: linux-64
+gradio==3.3.1
+librosa==0.8.1
+matplotlib==3.4.3
+numpy==1.20.3
+scipy==1.7.1
+tensorboard==2.10.0
+tensorflow==2.10.0
+tqdm==4.62.3
+pydub==0.25.1
