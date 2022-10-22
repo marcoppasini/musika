@@ -1,6 +1,10 @@
+import shutil
+import os
+from os import path as ospath
 import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.utils.layer_utils import count_params
+from huggingface_hub import hf_hub_download
 
 from layers import AddNoise
 
@@ -319,7 +323,9 @@ class Models_functions:
             g11 + g1, self.args.hop * 3, kernel_size=(1, 4), strides=(1, 2), upsample=True, noise=True, bnorm=False
         )
 
-        g = tf.keras.layers.Conv2D(dim, kernel_size=(1, 1), strides=(1, 1), kernel_initializer=self.init, padding="same")(g00 + g0)
+        g = tf.keras.layers.Conv2D(
+            dim, kernel_size=(1, 1), strides=(1, 1), kernel_initializer=self.init, padding="same"
+        )(g00 + g0)
         gf = tf.clip_by_value(g, -1.0, 1.0)
 
         g = self.conv_util(
@@ -328,7 +334,9 @@ class Models_functions:
         g = self.conv_util(
             g + g11, self.args.hop * 3, kernel_size=(1, 4), strides=(1, 2), upsample=True, noise=True, bnorm=False
         )
-        g = tf.keras.layers.Conv2D(dim, kernel_size=(1, 1), strides=(1, 1), kernel_initializer=self.init, padding="same")(g + g00)
+        g = tf.keras.layers.Conv2D(
+            dim, kernel_size=(1, 1), strides=(1, 1), kernel_initializer=self.init, padding="same"
+        )(g + g00)
         pf = tf.clip_by_value(g, -1.0, 1.0)
 
         gfls = tf.split(gf, self.args.shape // self.args.window, 0)
@@ -755,3 +763,33 @@ class Models_functions:
         print(f"Generator params: {count_params(gen.trainable_variables)}")
 
         return (critic, gen, enc, dec, enc2, dec2, gen_ema, [opt_dec, opt_disc], switch)
+
+    def download_networks(self):
+
+        print("Checking if models are already available...")
+
+        model_names = ["enc.h5", "enc2.h5", "dec.h5", "dec2.h5"]
+        for n in model_names:
+            if not ospath.exists(self.args.base_path + "/ae/" + n):
+                cached_path = hf_hub_download(repo_id="marcop/musika_ae", filename=n)
+                os.makedirs(self.args.base_path + "/ae", exist_ok=True)
+                shutil.copy(cached_path, self.args.base_path + "/ae")
+
+        model_names = ["critic.h5", "gen.h5", "gen_ema.h5", "opt_dec.npy", "opt_disc.npy", "switch.npy"]
+        for n in model_names:
+            if not ospath.exists(self.args.base_path + "/techno/" + n):
+                cached_path = hf_hub_download(repo_id="marcop/musika_techno", filename=n)
+                os.makedirs(self.args.base_path + "/techno", exist_ok=True)
+                shutil.copy(cached_path, self.args.base_path + "/techno")
+        for n in model_names:
+            if not ospath.exists(self.args.base_path + "/misc/" + n):
+                cached_path = hf_hub_download(repo_id="marcop/musika_misc", filename=n)
+                os.makedirs(self.args.base_path + "/misc", exist_ok=True)
+                shutil.copy(cached_path, self.args.base_path + "/misc")
+        for n in model_names:
+            if not ospath.exists(self.args.base_path + "/misc_small/" + n):
+                cached_path = hf_hub_download(repo_id="marcop/musika_misc_small", filename=n)
+                os.makedirs(self.args.base_path + "/misc_small", exist_ok=True)
+                shutil.copy(cached_path, self.args.base_path + "/misc_small")
+
+        print("Models are available!")

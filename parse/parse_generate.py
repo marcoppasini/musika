@@ -134,6 +134,12 @@ def params_args(args):
         help="Path of pretrained decoders weights",
     )
     parser.add_argument(
+        "--base_path",
+        type=str,
+        default="checkpoints",
+        help="Path where pretrained models are downloaded",
+    )
+    parser.add_argument(
         "--testing",
         type=str2bool,
         default=True,
@@ -170,6 +176,7 @@ def params_args(args):
     args.mu_rescale = tmp_args.mu_rescale
     args.sigma_rescale = tmp_args.sigma_rescale
     args.load_path = tmp_args.load_path
+    args.base_path = tmp_args.base_path
     args.dec_path = tmp_args.dec_path
     args.testing = tmp_args.testing
     args.cpu = tmp_args.cpu

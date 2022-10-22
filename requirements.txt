@@ -10,3 +10,4 @@ tensorboard==2.10.0
 tensorflow==2.10.0
 tqdm==4.62.3
 pydub==0.25.1
+huggingface-hub==0.10.1

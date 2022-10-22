@@ -164,6 +164,12 @@ def params_args(args):
         help="If not None, load models weights from this path",
     )
     parser.add_argument(
+        "--base_path",
+        type=str,
+        default="checkpoints",
+        help="Path where pretrained models are downloaded",
+    )
+    parser.add_argument(
         "--log_path",
         type=str,
         default="logs",
@@ -218,6 +224,7 @@ def params_args(args):
     args.train_path = tmp_args.train_path
     args.dec_path = tmp_args.dec_path
     args.load_path = tmp_args.load_path
+    args.base_path = tmp_args.base_path
     args.log_path = tmp_args.log_path
     args.testing = tmp_args.testing
     args.cpu = tmp_args.cpu

@@ -19,6 +19,7 @@ if __name__ == "__main__":
 
     # initialize networks
     M = Models_functions(args)
+    M.download_networks()
     models_ls = M.initialize_networks()
 
     # test musika in real-time during training
