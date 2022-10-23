@@ -18,7 +18,7 @@ __Listen__ to some __44.1 kHz samples__ [here](https://www.youtube.com/watch?v=0
 An online demo is available on Huggingface Spaces. Try it out [here](https://huggingface.co/spaces/marcop/musika)! [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/marcop/musika)
 
 ## Installation
-Before starting, make sure to have [conda](https://docs.conda.io/en/latest/miniconda.html), [ffmpeg](https://ffmpeg.org/) and [git-LFS](https://git-lfs.github.com/) installed.
+Before starting, make sure to have [conda](https://docs.conda.io/en/latest/miniconda.html) and [ffmpeg](https://ffmpeg.org/) installed.
 
 First, create a new environment for *musika*:
 
@@ -46,7 +46,7 @@ mkdir -p $CONDA_PREFIX/etc/conda/activate.d
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/' > $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 ```
 
-Finally, clone this repository (make sure to have [git-LFS](https://git-lfs.github.com/) installed!), move to its directory and install the requirements:
+Finally, clone this repository, move to its directory and install the requirements:
 
 ```bash
 git clone https://github.com/marcoppasini/musika
