@@ -666,9 +666,15 @@ class Utils_functions:
         print("--------------------------------")
         print("CLICK ON LINK BELOW TO OPEN GRADIO INTERFACE")
         if train:
-            iface.launch(prevent_thread_lock=True)
+            if self.args.share_gradio:
+                iface.launch(prevent_thread_lock=True, share=True)
+            else:
+                iface.launch(prevent_thread_lock=True)
         else:
-            iface.launch()
+            if self.args.share_gradio:
+                iface.launch(share=True)
+            else:
+                iface.launch()
         # iface.launch(share=True, enable_queue=True)
         print("--------------------------------")
         print("--------------------------------")

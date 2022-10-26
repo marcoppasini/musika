@@ -7,7 +7,7 @@ Official implementation of the paper [*Musika! Fast Infinite Waveform Music Gene
 This work was conducted as part of [Marco Pasini](https://twitter.com/marco_ppasini)'s Master thesis at the [Institute of Computational Perception](https://www.jku.at/en/institute-of-computational-perception/) at JKU Linz, with Jan Schlüter as supervisor.  
 
 Find the __demo samples__ [here](https://marcoppasini.github.io/musika) (old 22.05 kHz implementation)  
-Find the __paper__ [here](https://arxiv.org/) (old 22.05 kHz implementation)
+Find the __paper__ [here](https://arxiv.org/abs/2208.08706) (old 22.05 kHz implementation)
 
 __The current version of *musika* has been updated to produce 44.1 kHz higher quality samples!__ You can find the old implementation that is presented in the ISMIR paper in the 22kHz folder.
 

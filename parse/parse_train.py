@@ -199,6 +199,12 @@ def params_args(args):
         default=True,
         help="True if you wish to improve training speed with XLA",
     )
+    parser.add_argument(
+        "--share_gradio",
+        type=str2bool,
+        default=False,
+        help="True if you wish to create a public URL for the Gradio interface",
+    )
 
     tmp_args = parser.parse_args()
 
@@ -230,6 +236,7 @@ def params_args(args):
     args.cpu = tmp_args.cpu
     args.mixed_precision = tmp_args.mixed_precision
     args.xla = tmp_args.xla
+    args.share_gradio = tmp_args.share_gradio
 
     if args.small:
         args.latlen = 128

@@ -133,6 +133,12 @@ def params_args(args):
         default=True,
         help="True if your GPU supports mixed precision",
     )
+    parser.add_argument(
+        "--share_gradio",
+        type=str2bool,
+        default=False,
+        help="True if you wish to create a public URL for the Gradio interface",
+    )
 
     tmp_args = parser.parse_args()
 
@@ -153,6 +159,7 @@ def params_args(args):
     args.testing = tmp_args.testing
     args.cpu = tmp_args.cpu
     args.mixed_precision = tmp_args.mixed_precision
+    args.share_gradio = tmp_args.share_gradio
 
     if args.small:
         args.latlen = 128
