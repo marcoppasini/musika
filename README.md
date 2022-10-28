@@ -17,6 +17,9 @@ __Listen__ to some __44.1 kHz samples__ [here](https://www.youtube.com/watch?v=0
 ## Online Demo
 An online demo is available on Huggingface Spaces. Try it out [here](https://huggingface.co/spaces/marcop/musika)! [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/marcop/musika)
 
+## Finetuning Colab Notebook
+You can use [this Colab notebook](https://colab.research.google.com/drive/1PowSw3doBURwLE-OTCiWkO8HVbS5paRb) to train Musika on custom music, no technical skills needed!
+
 ## Installation
 Before starting, make sure to have [conda](https://docs.conda.io/en/latest/miniconda.html) and [ffmpeg](https://ffmpeg.org/) installed.
 
